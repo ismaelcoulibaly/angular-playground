@@ -1,0 +1,46 @@
+<form [formGroup]="profileForm">
+
+  <label>Prénom: <input type="text" formControlName="firstname"></label>
+  <label>Nom: <input type="text" formControlName="lastname"></label>
+  <label>Dob: <input type="text" formControlName="dob"></label>
+  <label>Pob: <input type="text" formControlName="pob"></label>
+  <label>Email: <input type="text" formControlName="email"></label>
+  <div formGroupName="contacts">
+    <h3>Contact</h3>
+    <label>Mobile: <input type="text" formControlName="mobile"></label>
+    <label>Domicile: <input type="text" formControlName="domicile"></label>
+    <label>skype: <input type="text" formControlName="skype"></label>
+    <label>Bureau: <input type="text" formControlName="bureau"></label>
+    <label>autre: <input type="text" formControlName="autre"></label>
+  </div>
+  <div formGroupName="address">
+    <h3>Adresse</h3>
+    <label>Rue: <input type="text" formControlName="street"></label>
+    <label>Ville: <input type="text" formControlName="city"></label>
+    <label>Province: <input type="text" formControlName="state"></label>
+    <label>CP: <input type="text" formControlName="zip"></label>
+  </div>
+
+  <div formGroupName="scores">
+    <h3>Notes aux travaux</h3>
+    <button (click)="addScore()">add</button>
+    <div *ngFor="let score of scores.controls, index as st">
+      <div>
+        <select formControlName="scoreType">
+          <option>Devoir 1</option>
+          <option>Devoir 2</option>
+          <option>Devoir 3</option>
+          <option>Devoir 4</option>
+        </select>
+        <input formControlName="scoreValue"/>
+
+    </div>
+
+  </div>
+
+
+
+  <br>
+  <br>
+  <button type="submit" [disabled]="profileForm.valid"> Inscrire </button>
+</form>
