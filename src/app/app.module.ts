@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 import { FormComponent } from './form/form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { InscriptionComponent } from './inscription/inscription.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     CourseComponent,
     DetailsComponent,
     FormComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
